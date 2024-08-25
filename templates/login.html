@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>登录</title>
+</head>
+
+<body>
+    <h1>登录</h1>
+    {% if error_message %}
+    <p>{{ error_message }}</p>
+    {% endif %}
+    <form action="{{ url_for('login') }}" method="post">
+        <input type="text" name="username" placeholder="用户名">
+        <input type="password" name="password" placeholder="密码">
+        <input type="submit" value="登录">
+        <input type="button" value="注册" onclick="location.href='{{ url_for('signup') }}'">
+    </form>
+
+</body>
+
+</html>
